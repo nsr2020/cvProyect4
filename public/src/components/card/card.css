@@ -1,0 +1,50 @@
+
+.sectionprojects{
+  display: flex;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 300px;
+  margin: 50px;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  border: 4px solid var(--nsr-blue);
+}
+
+ .card > img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+ width: 80%;
+ margin-top: 8px;
+}
+.card img:hover{
+  scale:1.1;
+}
+
+ .card > h2 {
+  text-align: center;
+} 
+
+.card > p {
+  text-align: center;
+  margin: 10px;
+} 
+.card a:first-of-type {
+  text-decoration: none;
+  color: var(--nsr-orange);
+  text-align: center;
+}
+.card a:last-child{
+  text-decoration: none;
+  color: var(--nsr-violet);
+  text-align: center;
+}
+.h3projects{
+  text-transform: uppercase;
+}
