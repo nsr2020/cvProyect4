@@ -1,15 +1,16 @@
 import data from "../../data/cvinfo"
+import { apagarFooter } from "../../utils/plugfooter/plugfooter"
+import { apagarHeader } from "../../utils/plugheader/plugHeader"
+import { apagarMain } from "../../utils/plugmain/plugmain"
+import { createDivMenu, divMenu } from "../divMenu/divmenu"
 
-
-
-  
  
 
-
+export const header = document.createElement("header")
 
 export const createHeader = () =>{
 
-  const header = document.createElement("header")
+  
   const h1 = document.createElement("h1")
   const imgh1 = document.createElement("img")
   const ul= document.createElement("ul")
@@ -25,6 +26,8 @@ export const createHeader = () =>{
   const bt2 = document.createElement("button")
   const bt3 = document.createElement("button")
   const bt4 = document.createElement("button")  
+  const imgmenu = document.createElement("img")
+
   
   h1.textContent = data.name
   a1.textContent = "About me"
@@ -35,15 +38,18 @@ export const createHeader = () =>{
   bt2.textContent = "🖤"
   bt3.textContent = "🎄"
   bt4.textContent = "🎅"
+  imgmenu.src = "https://res.cloudinary.com/dnju3aw4b/image/upload/v1704119514/hbomax/menuIcon_m2numx.png"
+  imgmenu.classList.add("imgmenu")
   a1.href = "#aboutMe"
   a2.href = "#education"
   a3.href = "#experience"
   a4.href = "#projects"
+
+  bt1.classList.add("bt1")  
   a1.classList.add("anchors")
   a2.classList.add("anchors")
   a3.classList.add("anchors")
   a4.classList.add("anchors")
-  bt1.classList.add("bt1")
   bt2.classList.add("bt2")
   bt3.classList.add("bt3")
   bt4.classList.add("bt4")
@@ -68,6 +74,8 @@ export const createHeader = () =>{
   l4.appendChild(a4)
   header.appendChild(bt1)
   header.appendChild(bt2)
+  header.append(imgmenu)
+  
 
   bt1.addEventListener("click", function () {
     const anchors = document.querySelectorAll(".anchors")
@@ -105,6 +113,17 @@ export const createHeader = () =>{
     imgh1.classList.remove("luces")
     imgh1.style.display="none"
    
+  })
+
+  imgmenu.addEventListener("click", () =>{
+          imgmenu.style.display="none"
+       
+        divMenu.classList.add("shown")
+        createDivMenu(imgmenu)
+        apagarFooter()
+        apagarHeader()
+        apagarMain()
+
   })
   
 

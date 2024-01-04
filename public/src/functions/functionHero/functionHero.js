@@ -1,9 +1,9 @@
 import { Button } from "../../components/button/button";
 import data from "../../data/cvinfo";
 
-
+export const main = document.createElement("main")
 export const createHero = () => {
-  const main = document.createElement("main")
+
   const section = document.createElement("section")
   const h2 = document.createElement("h2")
   const img = document.createElement("img")
@@ -11,7 +11,10 @@ export const createHero = () => {
   const btImg2 = document.createElement("button")
   const p = document.createElement("p")
   const a = document.createElement("a")
+  const divp = document.createElement("div")
+  divp.classList.add("divp")
   const div = document.createElement("div")
+  div.classList.add("divskills")
 
   h2.textContent = "About me"
   img.src = data.avatar
@@ -36,13 +39,7 @@ export const createHero = () => {
   section.appendChild(btImg)
   section.appendChild(btImg2)
   section.appendChild(div)
- 
 
-/*   for (const skill of data.skills) {
-    const button = document.createElement("button");
-    button.textContent = skill;
-    div.appendChild(button);
-  }   */
 
   div.innerHTML = `
   ${Button({ texto: "HTML5", size: "m" ,color:"red",family:"courier"})}
@@ -53,8 +50,38 @@ export const createHero = () => {
   ${Button({ texto: "GitHub", size: "m" ,color:"pink",family:"verdana"})}
  
 `;
+
+  const btns = document.querySelectorAll(".main-button")
+  btns.forEach((btn)=>{
+    btn.addEventListener("click", () =>{
+      if(btn.textContent === "HTML5"){
+        const url ="https://lenguajehtml.com/html/"
+        window.open(url, "_blank")
+      }else if ( btn.textContent === "CSS3"){
+        const url ="https://lenguajecss.com/"
+        window.open(url, "_blank") 
+      }else if ( btn.textContent === "JavaScript"){
+        const url ="https://lenguajejs.com/javascript/"
+        window.open(url, "_blank") 
+      }else if (btn.textContent === "Node.js"){
+        const url ="https://openwebinars.net/blog/que-es-nodejs/"
+        window.open(url, "_blank") 
+      }else if (btn.textContent === "Git"){
+        const url ="https://git-scm.com/"
+        window.open(url, "_blank") 
+      }else{
+        const url ="https://github.com/"
+        window.open(url, "_blank")  
+      }
+    })
+
+  })
+
+
+
 section.appendChild(a)
-section.appendChild(p)
+divp.append(p)
+section.append(divp)
  
   btImg.addEventListener("click", function(){
     btImg.style.display="none"

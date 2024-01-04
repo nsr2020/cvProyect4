@@ -9,6 +9,7 @@ export const createProjects = () =>{
   const main1 = document.querySelector("main")
   const sectionProjects = document.createElement("section")
  sectionProjects.classList.add("sectionprojects")
+ const divh3 = document.createElement("div")
  const h3 = document.createElement("h3")
  h3.textContent = "My Projects"
  h3.classList.add("h3project")
@@ -18,15 +19,22 @@ export const createProjects = () =>{
  h3.style.color ="green"
  h3.style.marginTop ="15px"
  h3.style.textDecoration = "underline"
+ divh3.append(h3)
+ sectionProjects.append(divh3)
+ divh3.classList.add("divh3")
+ 
+ const divArticles = document.createElement("div")
+ divArticles.classList.add("divarticles")
 
   for (const carta of data.projects ){
+  
     const articleProject = document.createElement("article")
     Card(articleProject, carta.image, carta.title, carta.description, carta.link, carta.preview)
-    sectionProjects.appendChild(articleProject)
+    divArticles.appendChild(articleProject)
+    sectionProjects.append(divArticles)
   }
   main1.append(sectionProjects)
-  sectionProjects.style.borderTop = "3px solid orange"
-  sectionProjects.style.width = "100%"
+  
 
 
 }

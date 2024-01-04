@@ -53,7 +53,7 @@ body{
 }
 header{
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
   z-index: 50;
   height: 20vh;
  background-color: var(--nsr-black);
@@ -101,17 +101,10 @@ header button:hover{
   scale:1.5;
 }
 
-/* .color-changing {
-  animation: changeColor 2s infinite alternate;
+.imgmenu{
+  display: none;
 }
-@keyframes changeColor {
-  from {
-    color: red;
-  }
-  to {
-    color: blue;
-  }
-} */
+
 
 .color-changing {
   animation: changeColor 10s infinite; 
@@ -160,10 +153,11 @@ main{
   align-items: center;
   flex-direction: column;
   /* overflow-y: auto; */
-  padding-top: 20vh;
+  padding-top: 10vh;
  /*  height: 150vh; */
   gap: 0px;
   width: 100%;
+  margin-top: 0px;
   
 }
 section{
@@ -173,7 +167,7 @@ flex-direction: column;
 gap: 19px;
 justify-content: center;
 align-items: center;
-/* margin-bottom: -140px;  */
+margin: auto;
 }
 section img{
   width:200px;
@@ -200,17 +194,13 @@ gap: 5px;
   font-size: 15px;
   cursor: pointer;
 }
-.btn2Img:hover{
-  scale: 2;
-}
-.btnImg:hover{
-  scale: 2;
-}
+
 .section button{
   font-size: 10px;
   border-radius: 3px;
   padding: 5px;
   font-weight: bold;
+  cursor: pointer;
 }
 .section a{
   text-decoration: none;
@@ -324,22 +314,37 @@ gap: 5px;
 }
 
 /*section3---------------------------------------------*/
+
+
 .sectionprojects{
   display: flex;
   flex-direction: column;
+border-top : 3px solid orange;
+width : 100%;
+}
+.divh3{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divarticles{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.divarticles article{
+ height: 577px;
+ margin-bottom: 80px;
+ 
 }
 .h3projects{
   text-transform: uppercase;
 }
 
-/* .artper1 h3, h2{
-  text-decoration: underline;
-}
-.artper1 p:first-of-type{
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin-bottom: 25px;
-  
-} */
+
 
 /*Footer---------------------------------------------------------*/
 footer{
@@ -453,4 +458,98 @@ footer p{
   .divjob{
     width: 70%;
   }
+}
+
+@media(max-width:606px){
+  .divskills{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width:617px){
+  header{
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+  }
+  header h1{
+    font-size: 25px;
+  }
+  header ul {
+    display: none;
+  }
+  header button{
+    display: none;
+  }
+  header button:first-of-type{
+    display: none;
+  }
+  header button:last-of-type{
+    display: none;
+  }
+  .imgmenu{
+    display: flex;
+    
+   width: 20px;
+   background-color: transparent;
+   cursor: pointer;
+  }
+}
+
+@media (max-width:377px){
+
+  .divskills button{
+   width: 200px;
+  }
+  .section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -55px;
+  }
+  .divp{
+    width: 200px;
+  }
+  .divp p{
+    font-size: 11px;
+  }
+  .section2{
+    width: 100%;
+   /*  margin-left: -55px; */
+  }
+
+  .artper1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .artper1 h3{
+    font-size: 15px;
+  }
+  .artper2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  .artper2 h2, .artper1 h2{
+    font-size: 12px;
+  }
+  .divjob p:last-of-type{
+    font-size: 12px;
+  }
+  .divjob{
+    width: 200px;
+  }
+
+  article.card{
+    width: 240px;
+  }
+  article.card p{
+    font-size: 12px;
+  }
+
 }

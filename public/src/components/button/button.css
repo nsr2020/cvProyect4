@@ -61,7 +61,7 @@ color: black
 }
 
 /*media queries-----------------*/
-@media (max-width:376px){
+/* @media (max-width:376px){
 
   .main-button {
     border-radius: 5px;
@@ -92,8 +92,8 @@ color: black
     font-size: 8px;
   }
 
-}
-@media (max-width:431px){
+} */
+/* @media (max-width:431px){
 
   .main-button {
     border-radius: 5px;
@@ -108,4 +108,4 @@ color: black
     font-size: 8px;
   }
 
-}
+} */

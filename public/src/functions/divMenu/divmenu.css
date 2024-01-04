@@ -1,0 +1,36 @@
+.divmenu{
+  display: none;
+}
+
+.divmenu.shown{
+  width: 100%;
+  height: 100svh;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.anchors1{
+  text-decoration: none;
+  background-color: aqua;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 1s;
+}
+.anchors1:hover{
+  color: brown;
+  font-size: 23px;
+}
+.divmenu ul li{
+  list-style: none;
+  background-color: aqua;
+}
+.divmenu ul {
+  width: 50%;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
