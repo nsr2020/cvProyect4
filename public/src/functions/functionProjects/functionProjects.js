@@ -3,11 +3,11 @@ import data from "../../data/cvinfo";
 
 
 
-
-
 export const createProjects = () =>{
-  const main1 = document.querySelector("main")
+ 
+    const main1 = document.querySelector("main")
   const sectionProjects = document.createElement("section")
+  sectionProjects.innerHTML=""
  sectionProjects.classList.add("sectionprojects")
  const divh3 = document.createElement("div")
  const h3 = document.createElement("h3")
@@ -22,59 +22,98 @@ export const createProjects = () =>{
  divh3.append(h3)
  sectionProjects.append(divh3)
  divh3.classList.add("divh3")
- 
  const divArticles = document.createElement("div")
  divArticles.classList.add("divarticles")
 
-  for (const carta of data.projects ){
-  
-    const articleProject = document.createElement("article")
-    Card(articleProject, carta.image, carta.title, carta.description, carta.link, carta.preview)
-    divArticles.appendChild(articleProject)
-    sectionProjects.append(divArticles)
-  }
-  main1.append(sectionProjects)
-  
+ const selectProjects = document.createElement("select")
+ const option = document.createElement("option")
+ option.value = "Projects"
+ option.text ="Projects"
+ selectProjects.append(option)
 
+ for( let i =0; i<4; i++){
+  const option = document.createElement("option")
+  option.value = data.projects[i].title
+  option.text = data.projects[i].title
+  selectProjects.append(option)
+ }
+ divh3.append(selectProjects)
+
+
+ let selectedProject = undefined;
+
+ createAllProjects(sectionProjects, divArticles,selectedProject);
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+          selectProjects.addEventListener("change", (e) =>{
+           
+           let selectedProject = e.target.value;
+           divArticles.innerHTML =""
+
+            if(selectedProject === "Projects") {
+              createAllProjects(sectionProjects,divArticles,)
+            }else{
+              createAllProjects(sectionProjects,divArticles,selectedProject)
+            }
+         
+          }) 
+
+        
+
+  main1.append(sectionProjects)
+
+        
 
 }
 
 
-/* export const createProjects = () =>{
-  const main1 = document.querySelector("main")
-  const section3 = document.createElement("section")
-
-  section3.classList.add("section3")
-
-  for(const project of data.projects){
-    const article = document.createElement("article")
-    const img = document.createElement("img")
-    const h2 = document.createElement("h2")
-    const p = document.createElement("p")
-    const a1 = document.createElement("a")
-    const a2 = document.createElement("a")
-
-    img.src = project.image
-    h2.textContent = project.title
-    p.textContent = project.description
-    a1.href = project.link
-    a2.href = project.preview
-    a1.textContent = "Link GitHub"
-    a2.textContent = "Web Project"
-    a1.target = "_blank"
-    a2.target = "_blank"
-
-    article.appendChild(img)
-    article.appendChild(h2)
-    article.appendChild(p)
-    article.appendChild(a1)
-    article.appendChild(a2)
-
-    section3.appendChild(article)
 
 
 
+
+const createAllProjects = (sectionProjects, divArticles,selectedProject) => {
+  if(!selectedProject || selectedProject === "Projects"){
+    
+  for (const carta of data.projects) {
+    const articleProject = document.createElement("article");
+   
+    Card(
+      articleProject,
+      carta.image,
+      carta.title,
+      carta.description,
+      carta.link,
+      carta.preview
+    );
+    divArticles.appendChild(articleProject)
+    sectionProjects.append(divArticles)
   }
-main1.appendChild(section3)
+}else{
+  const selectedProjectData = data.projects.find(
+    (project) => project.title === selectedProject
+  );
+  if (selectedProjectData) {
+  
+  const articleProject = document.createElement("article");
+  
+  Card(
+    articleProject,
+    selectedProjectData.image,
+    selectedProjectData.title,
+    selectedProjectData.description,
+    selectedProjectData.link,
+    selectedProjectData.preview
+  );
+  divArticles.appendChild(articleProject)
+  sectionProjects.append(divArticles)
+  }
+}
+};
 
-} */
+
+
