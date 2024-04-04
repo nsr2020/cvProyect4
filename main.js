@@ -15,10 +15,5 @@ import './style.css'
 //Ejcución de funcion del Header
 createHeader()
 createHero()
-createPersonalInfo()
-
-createProjects()  // si es 1 pinta todos los proyectos si es 0 es xq se ha activado el select y pasa directamente a 
-
-
 createFooter()
 

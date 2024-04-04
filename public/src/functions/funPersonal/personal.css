@@ -1,0 +1,80 @@
+.section2{
+  
+    width: 100%;
+    min-height: 80svh;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    
+  }
+  .edu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    background-color: var(--nsr-orange);
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+  }
+  .job{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    background-color: var(--nsr-orange);
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    
+  }
+  .edu, .job{
+    transition: all 0.5s;
+  }
+  .edu:hover{
+    scale:1.2;
+  }
+  .job:hover{
+    scale:1.2;
+  }
+  .artper1{
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    
+  }
+  .artper1 h3, h2{
+    margin-bottom: 20px;
+    text-decoration: underline;
+  }
+  .artper1 p:first-of-type{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 25px;
+    
+  }
+  
+  .artper2{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .divjob{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 35%;
+  }
+  .divjob p:last-child{
+    color: var(--nsr-violet);
+    text-align: justify;
+  }

@@ -1,9 +1,11 @@
 import { Button } from "../../components/button/button";
 import data from "../../data/cvinfo";
+import dataSpanish from "../../data/cvinfo_spanish";
+
 
 export const main = document.createElement("main")
-export const createHero = () => {
-
+export const createHero = (cv=data) => {
+  main.innerHTML =""
   const section = document.createElement("section")
   const h2 = document.createElement("h2")
   const img = document.createElement("img")
@@ -16,11 +18,18 @@ export const createHero = () => {
   const div = document.createElement("div")
   div.classList.add("divskills")
 
-  h2.textContent = "About me"
-  img.src = data.avatar
-  p.textContent = data.aboutMe
-  a.textContent = "Contact"
-  a.href = `mailto:${data.aboutMe}`
+  if(cv === data){
+    h2.textContent = "About me"
+    a.textContent = "Contact"
+  }else{
+    h2.textContent = "Sobre mi"
+    a.textContent = "Contacto"
+  }
+
+  img.src = cv.avatar
+  p.textContent = cv.aboutMe
+ 
+  a.href = `mailto:${cv.aboutMe}`
   a.target = "_blank"
   btImg.textContent ="🟢"
   btImg.classList.add("btnImg")
@@ -45,9 +54,10 @@ export const createHero = () => {
   ${Button({ texto: "HTML5", size: "m" ,color:"red",family:"courier"})}
   ${Button({ texto: "CSS3", size: "m",color:"green",family:"franklin" })}
   ${Button({ texto: "JavaScript", size: "m",color:"white",family:"gill" })}
-  ${Button({ texto: "Node.js", size: "m",color:"black" ,family:"lucida"})}
-  ${Button({ texto: "Git", size: "m",color:"blue" ,family:"arial"})}
-  ${Button({ texto: "GitHub", size: "m" ,color:"pink",family:"verdana"})}
+  ${Button({ texto: "Node.js", size: "m",color:"black" ,family:"verdana"})}
+  ${Button({ texto: "Git", size: "m",color:"blue" ,family:"franklin"})}
+  ${Button({ texto: "GitHub", size: "m" ,color:"pink",family:"lucida"})}
+  ${Button({ texto: "React", size: "m" ,color:"red",family:"franklin"})}
  
 `;
 
@@ -70,7 +80,7 @@ export const createHero = () => {
         const url ="https://git-scm.com/"
         window.open(url, "_blank") 
       }else{
-        const url ="https://github.com/"
+        const url ="https://es.legacy.reactjs.org/docs/jsx-in-depth.html"
         window.open(url, "_blank")  
       }
     })

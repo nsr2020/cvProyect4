@@ -1,0 +1,89 @@
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 50;
+    height: 10svh;
+   background-color: var(--nsr-black);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 3px solid var(--nsr-orange) ;
+  
+  }
+  header h1{
+    min-width: 20%;
+    font-size: 25px;
+   background-color: var(--nsr-black);
+   color: var(--nsr-plati);
+  }
+  header ul {
+    min-width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: black;
+  
+  }
+  header li {
+    list-style-type: none;
+    background-color: var(--nsr-black);
+   
+  }
+  header a{
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: bolder;
+  text-transform: uppercase;
+  background-color: var(--nsr-black);
+  color: var(--nsr-plati);
+  }
+  
+  
+  .imgmenu{
+    display: none;
+  }
+  
+  header a:hover {
+    animation: changeColor 10s infinite; 
+    
+  }
+  
+  @keyframes changeColor {
+    0%, 100% {
+      color: red;
+    }
+    20% {
+      color:rgb(160, 188, 33);
+    }
+    40% {
+      color: rgb(241, 90, 241);
+    }
+    60% {
+      color: blue;
+    }
+    80%{
+      color: #FF4F00;
+    }
+    100%{
+      color: goldenrod;
+    }
+  }
+  .imgEnglish,.imgSpain{
+    width: 30px;
+    height: 30px;
+    background-color: black ;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+  .imgEnglish:hover, .imgSpain:hover{
+    transform: scale(1.1);
+  }
+  .imgEnglish{
+    display: none;
+  }
+
+  
+  
+  

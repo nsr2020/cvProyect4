@@ -1,6 +1,4 @@
-import { encenderFooter } from "../../utils/plugfooter/plugfooter"
-import { encenderHeader } from "../../utils/plugheader/plugHeader"
-import { encenderMain } from "../../utils/plugmain/plugmain"
+
 import "./divmenu.css"
 
 export const divMenu = document.createElement("div")
@@ -52,36 +50,28 @@ a1.addEventListener("click", () =>{
 
   divMenu.classList.remove("shown")
   imagen.style.display = "flex"
-  encenderFooter()
-  encenderHeader()
-  encenderMain()
+
 })
 
 a2.addEventListener("click", () =>{
   
   divMenu.classList.remove("shown")
   imagen.style.display = "flex"
-  encenderFooter()
-  encenderHeader()
-  encenderMain()
+
 })
 
 a3.addEventListener("click", () =>{
 
   divMenu.classList.remove("shown")
   imagen.style.display = "flex"
-  encenderFooter()
-  encenderHeader()
-  encenderMain()
+
 })
 
 a4.addEventListener("click", () =>{
 
   divMenu.classList.remove("shown")
   imagen.style.display = "flex"
-  encenderFooter()
-  encenderHeader()
-  encenderMain()
+
 })
 
 }

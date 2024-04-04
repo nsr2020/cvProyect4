@@ -1,17 +1,22 @@
 import { Card } from "../../components/card/card";
 import data from "../../data/cvinfo";
+import { main } from "../functionHero/functionHero";
+import "./projects.css"
 
-
-
-export const createProjects = () =>{
- 
-    const main1 = document.querySelector("main")
+export const createProjects = (cv=data) =>{
+    main.innerHTML =""
   const sectionProjects = document.createElement("section")
   sectionProjects.innerHTML=""
  sectionProjects.classList.add("sectionprojects")
  const divh3 = document.createElement("div")
  const h3 = document.createElement("h3")
- h3.textContent = "My Projects"
+
+ if(cv === data){
+   h3.textContent = "My Projects"
+ }else{
+  h3.textContent = "Mis proyectos"
+ }
+
  h3.classList.add("h3project")
  h3.setAttribute("id", "projects")
  sectionProjects.appendChild(h3)
@@ -31,7 +36,7 @@ export const createProjects = () =>{
  option.text ="Projects"
  selectProjects.append(option)
 
- for( let i =0; i<4; i++){
+ for( let i =0; i<data.projects.length; i++){
   const option = document.createElement("option")
   option.value = data.projects[i].title
   option.text = data.projects[i].title
@@ -42,7 +47,7 @@ export const createProjects = () =>{
 
  let selectedProject = undefined;
 
- createAllProjects(sectionProjects, divArticles,selectedProject);
+ createAllProjects(sectionProjects, divArticles,selectedProject,cv);
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -65,10 +70,7 @@ export const createProjects = () =>{
 
         
 
-  main1.append(sectionProjects)
-
-        
-
+  main.append(sectionProjects)
 }
 
 
@@ -76,10 +78,10 @@ export const createProjects = () =>{
 
 
 
-const createAllProjects = (sectionProjects, divArticles,selectedProject) => {
+const createAllProjects = (sectionProjects, divArticles,selectedProject,cv) => {
   if(!selectedProject || selectedProject === "Projects"){
     
-  for (const carta of data.projects) {
+  for (const carta of cv.projects) {
     const articleProject = document.createElement("article");
    
     Card(
@@ -87,6 +89,7 @@ const createAllProjects = (sectionProjects, divArticles,selectedProject) => {
       carta.image,
       carta.title,
       carta.description,
+      carta.skills,
       carta.link,
       carta.preview
     );
@@ -94,7 +97,7 @@ const createAllProjects = (sectionProjects, divArticles,selectedProject) => {
     sectionProjects.append(divArticles)
   }
 }else{
-  const selectedProjectData = data.projects.find(
+  const selectedProjectData = cv.projects.find(
     (project) => project.title === selectedProject
   );
   if (selectedProjectData) {
@@ -106,6 +109,7 @@ const createAllProjects = (sectionProjects, divArticles,selectedProject) => {
     selectedProjectData.image,
     selectedProjectData.title,
     selectedProjectData.description,
+    selectedProjectData.skills,
     selectedProjectData.link,
     selectedProjectData.preview
   );

@@ -1,10 +1,11 @@
 
 
 import data from "../../data/cvinfo";
+import { main } from "../functionHero/functionHero";
+import "./personal.css"
 
-
-export const createPersonalInfo = () =>{
-const main = document.querySelector("main")
+export const createPersonalInfo = (cv=data) =>{
+main.innerHTML = ""
 const section2 = document.createElement("section")
 const articlePer1 = document.createElement("article")
 articlePer1.classList.add("article1")
@@ -24,9 +25,9 @@ const p = document.createElement("p")
   section2.classList.add("section2")
   a1.textContent = "👨‍🎓"
   a2.textContent ="💻"
-  h3.textContent = data.education.degree
-  h2.textContent = data.education.university
-  p.textContent = data.education.graduationYear
+  h3.textContent = cv.education.degree
+  h2.textContent = cv.education.university
+  p.textContent = cv.education.graduationYear
   a1.classList.add("edu")
   a2.classList.add("job")
   articlePer1.classList.add("artper1")
@@ -42,13 +43,13 @@ const p = document.createElement("p")
   articlePer1.appendChild(h2)
   articlePer1.appendChild(p)
   
-  for(const course of data.education.relevantCourses){
+  for(const course of cv.education.relevantCourses){
     const p = document.createElement("p")
     p.textContent = course
     p.classList.add("pCourse")
     articlePer1.appendChild(p)
   }
-  for(const job of data.workExperience){
+  for(const job of cv.workExperience){
 
     const divjob = document.createElement("div")
     const h2 = document.createElement("h2")

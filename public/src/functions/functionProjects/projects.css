@@ -1,0 +1,50 @@
+.sectionprojects{
+    display: flex;
+    flex-direction: column;
+  width : 100%;
+  }
+  .divh3{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .divh3 select{
+    color: blue;
+    border-radius: 10px;
+    border: 3px solid goldenrod;
+    font-weight: bolder;
+    width: 150px;
+    text-align: center;
+  }
+  .divh3 select option{
+    color: blue;
+    font-weight: bolder;
+    border: none;
+  }
+  
+  .divarticles{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .divarticles article{
+   height: 577px;
+   margin-bottom: 80px;
+   
+  }
+  .h3projects{
+    text-transform: uppercase;
+  }
+  .img-skill{
+    width: 20px;
+    height: 20px;
+  }
+  .div-skill{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

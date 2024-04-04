@@ -51,98 +51,6 @@ body{
   padding: 0; /* Elimina el relleno predeterminado del body */
   position: relative;
 }
-header{
-  width: 100%;
-  /* position: fixed; */
-  z-index: 50;
-  height: 20vh;
- background-color: var(--nsr-black);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-bottom: 3px solid var(--nsr-orange) ;
-}
-header h1{
-  font-size: 45px;
- background-color: var(--nsr-black);
- color: var(--nsr-plati);
-}
-header ul {
-  display: flex;
-  flex-direction: column;
- 
-
-}
-header li {
-  list-style-type: none;
-  background-color: var(--nsr-black);
- 
-}
-header a{
-cursor: pointer;
-font-size: 13px;
-text-decoration: none;
-font-weight: bolder;
-text-transform: uppercase;
-background-color: var(--nsr-black);
-color: var(--nsr-plati);
-}
-header button{
-  border: none;
-  cursor: pointer;
-  font-size: x-large;
-  background-color: var(--nsr-black);
-  
-}
-header button:last-child{
-  display: none;
-}
-header button:hover{
-  scale:1.5;
-}
-
-.imgmenu{
-  display: none;
-}
-
-
-.color-changing {
-  animation: changeColor 10s infinite; 
-  
-}
-
-@keyframes changeColor {
-  0%, 100% {
-    color: red;
-  }
-  20% {
-    color:green;
-  }
-  40% {
-    color: purple;
-  }
-  60% {
-    color: blue;
-  }
-  80%{
-    color: #FF4F00;
-  }
-  100%{
-    color: goldenrod;
-  }
-}
-header button:nth-child(4){
-  display: none;
-}
-.luces{
-  width: 280px;
-  background-color:transparent;
-  position: absolute;
-  top: 0;
-  left: 15%;
-  color: transparent;
-  display: none;
-}
 
 
 
@@ -152,12 +60,9 @@ main{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* overflow-y: auto; */
-  padding-top: 10vh;
- /*  height: 150vh; */
-  gap: 0px;
   width: 100%;
-  margin-top: 0px;
+  padding-top: 80px;
+  padding-bottom: 100px;
   
 }
 section{
@@ -173,6 +78,10 @@ section img{
   width:200px;
   height: 200px;
   border-radius: 100%;
+  transition: all 0.5s;
+}
+.section img:hover{
+  transform: scale(1.1);
 }
 section p{
   font-size: 15px;
@@ -180,8 +89,8 @@ section p{
   font-weight: bold;
 }
 section div {
-display: flex;
-gap: 5px;
+ display: flex;
+ gap: 5px;
 }
 .btnImg{
   border: none;
@@ -201,6 +110,10 @@ gap: 5px;
   padding: 5px;
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.5s;
+}
+.section button:hover{
+  transform: scale(0.8);
 }
 .section a{
   text-decoration: none;
@@ -208,10 +121,12 @@ gap: 5px;
   cursor: pointer;
   color: var(--nsr-orange);
   text-transform: uppercase;
+  transition: all 0.5s;
 }
-.section img:hover{
-  scale:1.1;
+.section a:hover {
+  transform: scale(1.2);
 }
+
 .imageAnimation{
   animation: animacionImg 6s infinite;
 }
@@ -232,135 +147,6 @@ gap: 5px;
   color: var(--nsr-violet);
 }
 
-
-/*section Personal ---------------------------------------*/
-.section2{
-  border-top: 3px solid var(--nsr-green);
-  margin-top: 40px;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  
-}
-.edu{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 25px;
-  margin-top: 20px;
-  background-color: var(--nsr-orange);
-  border-radius: 100%;
-  width: 45px;
-  height: 45px;
-  cursor: pointer;
-}
-.job{
-  display: none;
-  align-items: center;
-  justify-content: center;
-  font-size: 25px;
-  margin-top: 20px;
-  background-color: var(--nsr-orange);
-  border-radius: 100%;
-  width: 45px;
-  height: 45px;
-  cursor: pointer;
-  
-}
-.edu:hover{
-  scale:1.2;
-}
-.job:hover{
-  scale:1.2;
-}
-.artper1{
-  width: 100%;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap:5px;
-  margin-bottom: 20px;
-}
-.artper1 h3, h2{
-  text-decoration: underline;
-}
-.artper1 p:first-of-type{
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin-bottom: 25px;
-  
-}
-
-.artper2{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap:45px;
-  margin-bottom: 20px;
-}
-.divjob{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  width: 35%;
-}
-.divjob p:last-child{
-  color: var(--nsr-violet);
-  text-align: justify;
-}
-
-/*section3----------------Projects---------------------------*/
-
-
-.sectionprojects{
-  display: flex;
-  flex-direction: column;
-border-top : 3px solid orange;
-width : 100%;
-}
-.divh3{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-.divh3 select{
-  color: blue;
-  border-radius: 10px;
-  border: 3px solid goldenrod;
-  font-weight: bolder;
-  width: 150px;
-  text-align: center;
-}
-.divh3 select option{
-  color: blue;
-  font-weight: bolder;
-  border: none;
-}
-
-.divarticles{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-.divarticles article{
- height: 577px;
- margin-bottom: 80px;
- 
-}
-.h3projects{
-  text-transform: uppercase;
-}
-
-
-
 /*Footer---------------------------------------------------------*/
 footer{
   width: 100%;
@@ -370,7 +156,8 @@ footer{
  align-items: center;
 border-top: 3px solid var(--nsr-violet);
 background-color: var(--nsr-black);
-position: sticky;
+position: fixed;
+bottom: 0;
 z-index: 51;
 }
 footer p{
@@ -387,9 +174,7 @@ footer p{
     margin-left: 5px;
     font-size: 5px;
   }
-  .luces{
-    width: 150px;
-  }
+ 
   header{
     justify-content: space-evenly;
     border: none;
@@ -417,10 +202,7 @@ footer p{
     font-size: 20px;
     margin-left: 10px;
   }
-  .luces{
-    width: 170px;
-    top: 10%;
-  }
+
   header{
     justify-content: start;
     border: none;
@@ -443,10 +225,7 @@ footer p{
     font-size: 20px;
     margin-left: 10px;
   }
-  .luces{
-    width: 170px;
-    top: 10%;
-  }
+
   header{
     justify-content: start;
     border: none;
@@ -475,12 +254,18 @@ footer p{
   }
 }
 
-@media(max-width:606px){
+@media(max-width:684px){
   .divskills{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+  }
+}
+@media (max-width: 940px){
+  header {
+gap: 0
+;
   }
 }
 
@@ -514,16 +299,21 @@ footer p{
   }
 }
 
-@media (max-width:377px){
+@media (max-width:403px){
 
   .divskills button{
-   width: 200px;
+   width: 210px;
+  }
+  .sectionHero{
+    overflow: hidden;
+    margin-left: -35px;
   }
   .section{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: -55px;
+    margin-left: -35px;
+    overflow-y: hidden;
   }
   .divp{
     width: 200px;
@@ -533,7 +323,7 @@ footer p{
   }
   .section2{
     width: 100%;
-   /*  margin-left: -55px; */
+   
   }
 
   .artper1{
